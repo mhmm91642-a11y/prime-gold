@@ -1,73 +1,359 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prime Gold IPTV</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Gold | أفضل اشتراكات IPTV مميزة</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="برايم جولد - اشتراكات IPTV مميزة بجودة عالية وثبات ممتاز. استمتع بمشاهدة قنواتك المفضلة والمباريات والأفلام بأعلى جودة.">
+    <meta name="keywords" content="IPTV, Prime Gold, اشتراكات IPTV, مباريات, أفلام, مسلسلات, جودة عالية, VULTR, HULK, IFAR">
+    <meta name="author" content="Prime Gold">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://primegold-iptv.com/">
+    <meta property="og:title" content="Prime Gold | أفضل اشتراكات IPTV مميزة">
+    <meta property="og:description" content="استمتع بتجربة مشاهدة فريدة مع اشتراكات برايم جولد. جودة 4K وثبات بدون تقطيع.">
+    <meta property="og:image" content="logo.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- الهيدر -->
-  <header class="header">
-    <h1>Prime Gold</h1>
-    <p>أفضل اشتراكات IPTV بجودة عالية وسيرفرات مستقرة</p>
-    <a class="whatsapp-btn" href="https://wa.me/966592360612" target="_blank">
-      تواصل واتساب
-    </a>
-  </header>
-
-  <!-- الباقات -->
-  <section class="plans">
-    <h2>الباقات</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>VULTR</h3>
-        <p>جودة عالية + استقرار ممتاز</p>
-        <span>10$ / شهر</span>
-        <a href="https://wa.me/966592360612">اشترك الآن</a>
-      </div>
-
-      <div class="card gold">
-        <h3>HULK</h3>
-        <p>أفضل جودة + قنوات 4K</p>
-        <span>15$ / شهر</span>
-        <a href="https://wa.me/966592360612">اشترك الآن</a>
-      </div>
-
-      <div class="card">
-        <h3>IFAR</h3>
-        <p>اقتصادي + أداء ممتاز</p>
-        <span>7$ / شهر</span>
-        <a href="https://wa.me/966592360612">اشترك الآن</a>
-      </div>
-
+    <!-- Loading Animation -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <img src="logo.svg" alt="Prime Gold Logo">
+            <div class="loader-bar"></div>
+        </div>
     </div>
-  </section>
 
-  <!-- المميزات -->
-  <section class="features">
-    <h2>المميزات</h2>
-    <ul>
-      <li>📺 أكثر من 10,000 قناة</li>
-      <li>🎬 أفلام ومسلسلات محدثة يومياً</li>
-      <li>⚡ سيرفرات سريعة بدون تقطيع</li>
-      <li>📱 يعمل على جميع الأجهزة</li>
-    </ul>
-  </section>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="logo.svg" alt="Prime Gold Logo">
+                <span>PRIME GOLD</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#features">المميزات</a></li>
+                <li><a href="#packages">الباقات</a></li>
+                <li><a href="#devices">الأجهزة</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://wa.me/966592360612" class="btn btn-gold-outline">تواصل معنا</a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-  <!-- الأجهزة -->
-  <section class="devices">
-    <h2>الأجهزة المدعومة</h2>
-    <p>Android - iPhone - Smart TV - PC - Fire Stick</p>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 class="gradient-text">اشتراكات IPTV مميزة</h1>
+                <p class="subheadline">جودة عالية • ثبات ممتاز • دعم فني متواصل</p>
+                <div class="hero-btns">
+                    <a href="#packages" class="btn btn-gold">اشترك الآن <i class="fas fa-shopping-cart"></i></a>
+                    <a href="https://wa.me/966592360612" class="btn btn-whatsapp">تواصل واتساب <i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>اكتشف المزيد</span>
+            <div class="mouse"></div>
+        </div>
+    </section>
 
-  <!-- الفوتر -->
-  <footer>
-    <p>© 2026 Prime Gold IPTV - جميع الحقوق محفوظة</p>
-  </footer>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>لماذا تختار Prime Gold؟</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                    <h3>تفعيل فوري</h3>
+                    <p>احصل على بيانات اشتراكك فور إتمام عملية الدفع مباشرة.</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                    <h3>استقرار عالي</h3>
+                    <p>سيرفرات قوية تضمن لك مشاهدة بدون تقطيع حتى في أوقات الذروة.</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>جميع الأجهزة</h3>
+                    <p>يعمل اشتراكنا على كافة الأجهزة الذكية والشاشات والكمبيوتر.</p>
+                </div>
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="icon-box"><i class="fas fa-headset"></i></div>
+                    <h3>دعم فني 24/7</h3>
+                    <p>فريق متخصص متواجد على مدار الساعة لمساعدتك في أي استفسار.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>باقات الاشتراك</h2>
+                <p>اختر الباقة التي تناسب احتياجاتك</p>
+                <div class="title-line"></div>
+            </div>
+
+            <!-- VULTR Server -->
+            <div class="server-group" data-aos="fade-up">
+                <h3 class="server-name">سيرفر VULTR <span class="badge">الأكثر طلباً</span></h3>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <div class="card-header">3 أشهر</div>
+                        <div class="price">70 <span>ريال</span></div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> جودة 4K/UHD</li>
+                            <li><i class="fas fa-check"></i> ثبات ممتاز</li>
+                            <li><i class="fas fa-check"></i> تحديثات يومية</li>
+                        </ul>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة VULTR - 3 أشهر" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                    <div class="price-card popular">
+                        <div class="popular-badge">الأفضل قيمة</div>
+                        <div class="card-header">6 أشهر</div>
+                        <div class="price">100 <span>ريال</span></div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> جودة 4K/UHD</li>
+                            <li><i class="fas fa-check"></i> ثبات ممتاز</li>
+                            <li><i class="fas fa-check"></i> مكتبة أفلام ضخمة</li>
+                        </ul>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة VULTR - 6 أشهر" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="card-header">سنة جهاز واحد</div>
+                        <div class="price">150 <span>ريال</span></div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> جودة 4K/UHD</li>
+                            <li><i class="fas fa-check"></i> ثبات ممتاز</li>
+                            <li><i class="fas fa-check"></i> دعم فني VIP</li>
+                        </ul>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة VULTR - سنة جهاز واحد" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="card-header">سنة جهازين</div>
+                        <div class="price">300 <span>ريال</span></div>
+                        <ul class="card-features">
+                            <li><i class="fas fa-check"></i> جهازين بنفس الوقت</li>
+                            <li><i class="fas fa-check"></i> جودة 4K/UHD</li>
+                            <li><i class="fas fa-check"></i> ثبات ممتاز</li>
+                        </ul>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة VULTR - سنة جهازين" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HULK Server -->
+            <div class="server-group" data-aos="fade-up">
+                <h3 class="server-name">سيرفر HULK</h3>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <div class="card-header">3 أشهر</div>
+                        <div class="price">100 <span>ريال</span></div>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة HULK - 3 أشهر" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="card-header">6 أشهر</div>
+                        <div class="price">150 <span>ريال</span></div>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة HULK - 6 أشهر" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="card-header">سنة جهاز واحد</div>
+                        <div class="price">250 <span>ريال</span></div>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة HULK - سنة جهاز واحد" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="card-header">سنة جهازين</div>
+                        <div class="price">450 <span>ريال</span></div>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة HULK - سنة جهازين" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IFAR Server -->
+            <div class="server-group" data-aos="fade-up">
+                <h3 class="server-name">سيرفر IFAR</h3>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <div class="card-header">3 أشهر</div>
+                        <div class="price">100 <span>ريال</span></div>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة IFAR - 3 أشهر" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="card-header">6 أشهر</div>
+                        <div class="price">150 <span>ريال</span></div>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة IFAR - 6 أشهر" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="card-header">سنة جهاز واحد</div>
+                        <div class="price">300 <span>ريال</span></div>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة IFAR - سنة جهاز واحد" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="card-header">سنة جهازين</div>
+                        <div class="price">550 <span>ريال</span></div>
+                        <a href="https://wa.me/966592360612?text=أريد الاشتراك في باقة IFAR - سنة جهازين" class="btn btn-gold">اشترك الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Devices -->
+    <section id="devices" class="devices">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>الأجهزة المدعومة</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="devices-grid">
+                <div class="device-item" data-aos="fade-up" data-aos-delay="50">
+                    <i class="fab fa-android"></i>
+                    <span>Android</span>
+                </div>
+                <div class="device-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-tv"></i>
+                    <span>Android TV</span>
+                </div>
+                <div class="device-item" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-desktop"></i>
+                    <span>Smart TV</span>
+                </div>
+                <div class="device-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-tv"></i>
+                    <span>Samsung TV</span>
+                </div>
+                <div class="device-item" data-aos="fade-up" data-aos-delay="250">
+                    <i class="fas fa-tv"></i>
+                    <span>LG TV</span>
+                </div>
+                <div class="device-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fab fa-apple"></i>
+                    <span>iPhone / iPad</span>
+                </div>
+                <div class="device-item" data-aos="fade-up" data-aos-delay="350">
+                    <i class="fab fa-windows"></i>
+                    <span>Windows</span>
+                </div>
+                <div class="device-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fab fa-apple"></i>
+                    <span>Mac</span>
+                </div>
+                <div class="device-item" data-aos="fade-up" data-aos-delay="450">
+                    <i class="fas fa-fire"></i>
+                    <span>Fire Stick</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>الأسئلة الشائعة</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>هل يعمل على جميع الأجهزة؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، اشتراكات Prime Gold تعمل على كافة الأجهزة الذكية بما في ذلك هواتف الأندرويد والأيفون، الشاشات الذكية، أجهزة الكمبيوتر، وأجهزة الـ TV Box.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>هل يوجد دعم فني؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>بالتأكيد، نوفر دعم فني متخصص على مدار الساعة عبر الواتساب لمساعدتك في التفعيل أو حل أي مشكلة تواجهك.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>كم مدة التفعيل؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يتم التفعيل بشكل فوري بعد تأكيد عملية الدفع. ستصلك بيانات الاشتراك مباشرة عبر الواتساب أو البريد الإلكتروني.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3>هل يمكن التجديد لاحقاً؟</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، يمكنك تجديد اشتراكك في أي وقت قبل انتهائه أو بعده، وسنقوم بتمديد المدة على نفس الحساب الخاص بك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.svg" alt="Prime Gold Logo">
+                    <span>PRIME GOLD</span>
+                </div>
+                <p>وجهتك الأولى لاشتراكات IPTV الفاخرة والمستقرة.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/966592360612"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Prime Gold. جميع الحقوق محفوظة.</p>
+                <p>واتساب: <a href="tel:+966592360612">+966592360612</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/966592360612" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">تحدث معنا</span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
