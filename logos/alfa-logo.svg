@@ -1,0 +1,46 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="30%" style="stop-color:#FFFACD"/>
+      <stop offset="60%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+    <linearGradient id="aGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE55C"/>
+      <stop offset="50%" style="stop-color:#D4AF37"/>
+      <stop offset="100%" style="stop-color:#6B4E00"/>
+    </linearGradient>
+    <radialGradient id="glowBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(212,175,55,0.2)"/>
+      <stop offset="100%" style="stop-color:rgba(0,0,0,0)"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Glow background -->
+  <circle cx="60" cy="60" r="55" fill="url(#glowBg)"/>
+  <!-- Outer decorative ring -->
+  <circle cx="60" cy="60" r="50" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+  <!-- Diamond shape background -->
+  <polygon points="60,10 105,60 60,105 15,60" fill="#0d0d0d" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+  <!-- A letter 3D shadow -->
+  <path d="M60,20 L90,90 L78,90 L70,70 L50,70 L42,90 L30,90 L60,20 Z M55,60 L65,60 L60,42 Z" fill="#4A3500" opacity="0.5" transform="translate(2,4)"/>
+  <!-- A letter main -->
+  <path d="M60,20 L90,90 L78,90 L70,70 L50,70 L42,90 L30,90 L60,20 Z" fill="url(#aGrad)" filter="url(#glow)"/>
+  <!-- A crossbar cutout -->
+  <path d="M53,62 L67,62 L64,72 L56,72 Z" fill="#0a0a0a"/>
+  <!-- A highlight -->
+  <path d="M60,20 L75,55 L60,48 Z" fill="rgba(255,255,255,0.3)"/>
+  <!-- Corner decorations -->
+  <circle cx="60" cy="10" r="3" fill="#FFD700" opacity="0.8"/>
+  <circle cx="105" cy="60" r="3" fill="#FFD700" opacity="0.6"/>
+  <circle cx="15" cy="60" r="3" fill="#FFD700" opacity="0.6"/>
+  <!-- Label -->
+  <text x="60" y="116" text-anchor="middle" font-family="Arial Black" font-size="9" font-weight="900" fill="url(#goldGrad)" letter-spacing="4">ALFA</text>
+</svg>

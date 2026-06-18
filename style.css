@@ -1,18 +1,21 @@
 /* 
-    Prime Gold - Redesign (Netflix + Apple + SaaS Premium)
-    Luxury Gold & Black Theme
+    Prime Gold - Premium IPTV
+    Luxury Gold & Black Theme - Updated with 7 Services
 */
 
 :root {
     --gold: #D4AF37;
     --gold-light: #FFD700;
     --gold-glow: rgba(212, 175, 55, 0.4);
+    --gold-glow-strong: rgba(212, 175, 55, 0.6);
     --bg-dark: #050505;
-    --bg-card: #121212;
+    --bg-card: #0e0e0e;
+    --bg-card-hover: #141414;
     --text-white: #ffffff;
     --text-gray: #a0a0a0;
     --glass: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
+    --gold-border: rgba(212, 175, 55, 0.3);
     --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -31,7 +34,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -54,7 +57,13 @@ body {
 
 .loader-logo {
     width: 100%;
-    filter: drop-shadow(0 0 10px var(--gold));
+    filter: drop-shadow(0 0 20px var(--gold));
+    animation: pulseLogo 2s ease-in-out infinite;
+}
+
+@keyframes pulseLogo {
+    0%, 100% { filter: drop-shadow(0 0 10px var(--gold)); }
+    50% { filter: drop-shadow(0 0 30px var(--gold-light)); }
 }
 
 .shimmer {
@@ -79,10 +88,10 @@ header {
 }
 
 header.scrolled {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     backdrop-filter: blur(20px);
     padding: 12px 0;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--gold-border);
 }
 
 nav {
@@ -119,6 +128,8 @@ nav {
 
 .nav-links a:hover { color: var(--gold); }
 
+.menu-toggle { display: none; }
+
 /* --- Buttons --- */
 .btn {
     padding: 12px 28px;
@@ -130,6 +141,8 @@ nav {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    border: none;
+    font-family: 'Cairo', sans-serif;
 }
 
 .btn-nav {
@@ -146,7 +159,7 @@ nav {
 
 .btn-gold-main:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px var(--gold-glow);
+    box-shadow: 0 15px 40px var(--gold-glow-strong);
 }
 
 .btn-glass {
@@ -163,12 +176,17 @@ nav {
 .btn-card {
     width: 100%;
     justify-content: center;
-    background: #fff;
-    color: #000;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 1px solid var(--gold-border);
+    font-size: 0.95rem;
 }
 
 .btn-card:hover {
     background: var(--gold);
+    color: #000;
+    border-color: var(--gold);
+    transform: translateY(-2px);
 }
 
 /* --- Hero Section --- */
@@ -246,7 +264,7 @@ nav {
 .features-row {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    gap: 50px;
     flex-wrap: wrap;
 }
 
@@ -260,6 +278,36 @@ nav {
 
 .f-item i { color: var(--gold); font-size: 1.2rem; }
 
+/* --- Service Tabs --- */
+.service-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 10px 28px;
+    border-radius: 100px;
+    border: 1px solid var(--gold-border);
+    background: transparent;
+    color: var(--text-gray);
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: #000;
+    border-color: transparent;
+    box-shadow: 0 5px 20px var(--gold-glow);
+}
+
 /* --- Pricing Section --- */
 .pricing {
     padding: 80px 0;
@@ -268,7 +316,7 @@ nav {
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .section-title {
@@ -282,17 +330,47 @@ nav {
     position: relative;
 }
 
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+.pricing-slider-container {
+    position: relative;
+    overflow: hidden;
 }
 
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 10px 5px 20px;
+}
+
+/* --- Service Logo --- */
+.service-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 90px;
+    position: relative;
+}
+
+.service-logo-img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.5));
+    transition: var(--transition);
+}
+
+.price-card-premium:hover .service-logo-img {
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8));
+    transform: scale(1.08) translateY(-3px);
+}
+
+/* --- Price Card --- */
 .price-card-premium {
     background: var(--bg-card);
     border: 1px solid var(--glass-border);
-    border-radius: 32px;
-    padding: 48px 32px;
+    border-radius: 28px;
+    padding: 36px 28px;
     position: relative;
     overflow: hidden;
     transition: var(--transition);
@@ -300,70 +378,167 @@ nav {
     flex-direction: column;
 }
 
+.price-card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.price-card-premium:hover::before {
+    opacity: 1;
+}
+
 .price-card-premium:hover {
-    transform: translateY(-12px);
-    border-color: var(--gold);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transform: translateY(-10px);
+    border-color: var(--gold-border);
+    background: var(--bg-card-hover);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(212,175,55,0.08);
 }
 
 .card-glow {
     position: absolute;
     top: -50%; left: -50%;
     width: 200%; height: 200%;
-    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
     pointer-events: none;
 }
 
-.server-logo {
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 24px;
-    filter: drop-shadow(0 0 15px var(--gold-glow));
+.server-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    text-align: center;
+    background: linear-gradient(135deg, #fff, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.server-title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 32px;
+.server-tagline {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    text-align: center;
+    margin-bottom: 24px;
+    font-style: italic;
 }
 
 .options-list {
-    margin-bottom: 40px;
+    margin-bottom: 28px;
     flex-grow: 1;
 }
 
 .option-item {
     display: flex;
     justify-content: space-between;
-    padding: 16px 0;
+    align-items: center;
+    padding: 14px 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: 0.3s;
+}
+
+.option-item:last-child {
+    border-bottom: none;
+}
+
+.option-item:hover {
+    padding-right: 8px;
 }
 
 .option-item.featured {
     color: var(--gold);
     font-weight: 800;
+    position: relative;
 }
 
-.opt-duration { font-size: 1rem; }
-.opt-price { font-weight: 700; }
+.option-item.featured::after {
+    content: '★';
+    position: absolute;
+    right: -5px;
+    font-size: 0.6rem;
+    color: var(--gold);
+    opacity: 0.6;
+}
 
+.opt-duration {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.opt-duration i {
+    color: var(--gold);
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.opt-price {
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--gold);
+}
+
+.option-item:not(.featured) .opt-price {
+    color: var(--text-white);
+}
+
+/* --- Popular Cards --- */
 .price-card-premium.popular {
-    border: 2px solid var(--gold);
-    transform: scale(1.05);
-    z-index: 2;
+    border: 1.5px solid var(--gold);
+    box-shadow: 0 0 30px rgba(212,175,55,0.12);
+}
+
+.price-card-premium.popular-4k {
+    border: 1.5px solid var(--gold);
+    box-shadow: 0 0 30px rgba(212,175,55,0.12);
 }
 
 .popular-tag {
     position: absolute;
-    top: 20px; left: 50%;
+    top: 16px;
+    left: 50%;
     transform: translateX(-50%);
-    background: var(--gold);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
     color: #000;
-    padding: 4px 16px;
+    padding: 4px 18px;
     border-radius: 100px;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 900;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.popular-tag-4k {
+    background: linear-gradient(135deg, #fff, var(--gold));
+}
+
+/* --- Slider Dots --- */
+.slider-dots {
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--glass-border);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slider-dot.active {
+    background: var(--gold);
+    width: 24px;
+    border-radius: 4px;
 }
 
 /* --- Devices Minimal --- */
@@ -392,13 +567,14 @@ nav {
     color: var(--gold);
     transform: scale(1.1);
     transition: 0.3s;
+    cursor: pointer;
 }
 
 /* --- Footer --- */
 footer {
     padding: 60px 0 30px;
     background: #000;
-    border-top: 1px solid var(--glass-border);
+    border-top: 1px solid var(--gold-border);
 }
 
 .footer-top {
@@ -413,6 +589,14 @@ footer {
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.whatsapp-link:hover {
+    text-shadow: 0 0 15px #25D366;
 }
 
 .footer-bottom {
@@ -421,29 +605,98 @@ footer {
     font-size: 0.85rem;
 }
 
-/* --- Mobile Slider --- */
-@media (max-width: 992px) {
+/* --- Responsive: Large (992px - 1200px) --- */
+@media (max-width: 1200px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Mobile Slider (< 768px) --- */
+@media (max-width: 768px) {
     .pricing-grid {
         display: flex;
         overflow-x: auto;
-        padding: 20px 0 40px;
-        gap: 20px;
+        padding: 10px 0 30px;
+        gap: 16px;
         scroll-snap-type: x mandatory;
-        scrollbar-width: none; /* Firefox */
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
     }
-    
-    .pricing-grid::-webkit-scrollbar { display: none; } /* Chrome */
-    
+
+    .pricing-grid::-webkit-scrollbar { display: none; }
+
     .price-card-premium {
-        min-width: 300px;
+        min-width: 280px;
+        max-width: 300px;
         scroll-snap-align: center;
+        flex-shrink: 0;
     }
-    
-    .price-card-premium.popular { transform: scale(1); }
-    
+
+    .price-card-premium.popular,
+    .price-card-premium.popular-4k {
+        transform: none;
+    }
+
+    .slider-dots {
+        display: flex;
+    }
+
     .nav-links, .btn-nav { display: none; }
     .menu-toggle { display: block; font-size: 1.5rem; color: var(--gold); }
-    
-    .hero-actions { flex-direction: column; }
-    .features-row { gap: 30px; }
+
+    .hero-actions { flex-direction: column; align-items: center; }
+    .features-row { gap: 20px; }
+    .section-title { font-size: 1.8rem; }
+    .footer-top { flex-direction: column; gap: 20px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+    .price-card-premium {
+        min-width: 260px;
+    }
+
+    .service-logo-img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .server-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* --- Card entrance animation --- */
+@keyframes cardFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+.price-card-premium.popular {
+    animation: cardFloat 4s ease-in-out infinite;
+}
+
+.price-card-premium.popular:hover {
+    animation: none;
+}
+
+/* --- Gold shimmer on card hover --- */
+@keyframes goldShimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+.price-card-premium:hover .server-title {
+    background: linear-gradient(90deg, #D4AF37, #FFE55C, #FFFACD, #FFE55C, #D4AF37);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 2s linear infinite;
 }
