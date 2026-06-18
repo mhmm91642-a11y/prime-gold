@@ -1,22 +1,31 @@
 /* 
-    Prime Gold - Premium IPTV Website Scripts
-    Functionalities: Loader, Sticky Header, Mobile Menu, FAQ Accordion, Animations
+    Prime Gold - Premium IPTV Scripts
+    Updated for Slider & Redesign
 */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Loader
+    // 1. Advanced Loader
     const loader = document.querySelector('.loader-wrapper');
     window.addEventListener('load', () => {
         setTimeout(() => {
+            loader.style.transition = 'opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
             loader.style.opacity = '0';
             setTimeout(() => {
-                loader.style.visibility = 'hidden';
-            }, 500);
-        }, 1000);
+                loader.style.display = 'none';
+                // Trigger AOS after loader is gone
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 1000,
+                        once: true,
+                        offset: 50,
+                    });
+                }
+            }, 800);
+        }, 1200);
     });
 
-    // 2. Sticky Header & Active Links
+    // 2. Header Scroll Effect
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -26,67 +35,53 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        });
-    });
-
-    // 4. FAQ Accordion
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                otherItem.classList.remove('active');
-            });
-            
-            // Toggle current item
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
-    });
-
-    // 5. AOS Initialization (Animation on Scroll)
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-            easing: 'ease-in-out'
-        });
-    }
-
-    // 6. Smooth Scroll for all anchor links
+    // 3. Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
                 window.scrollTo({
-                    top: target.offsetTop - 80,
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
+            }
+        });
+    });
+
+    // 4. Mobile Slider Scroll Hint (Optional)
+    const pricingGrid = document.querySelector('.pricing-grid');
+    if (pricingGrid && window.innerWidth < 992) {
+        // You could add a "swipe" animation hint here
+    }
+
+    // 5. Card Hover 3D Effect (Subtle)
+    const cards = document.querySelectorAll('.price-card-premium');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 992) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                card.style.transform = `translateY(-12px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+            if (card.classList.contains('popular')) {
+                card.style.transform = 'scale(1.05) translateY(0)';
             }
         });
     });
