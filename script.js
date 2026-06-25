@@ -1,6 +1,6 @@
 /* 
-    Prime Gold - Premium IPTV Scripts
-    Updated: 7 Services + Slider + Tabs
+    9KPRO TV - Premium IPTV Scripts
+    Updated: Dropdown + Card Logos + Slider + Tabs
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,37 +9,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.querySelector('.loader-wrapper');
     window.addEventListener('load', () => {
         setTimeout(() => {
-            loader.style.transition = 'opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-                if (typeof AOS !== 'undefined') {
-                    AOS.init({
-                        duration: 900,
-                        once: true,
-                        offset: 50,
-                        easing: 'ease-out-cubic',
-                    });
-                }
-            }, 800);
+            if (loader) {
+                loader.style.transition = 'opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    if (typeof AOS !== 'undefined') {
+                        AOS.init({
+                            duration: 900,
+                            once: true,
+                            offset: 50,
+                            easing: 'ease-out-cubic',
+                        });
+                    }
+                }, 800);
+            }
         }, 1200);
     });
 
     // 2. Header Scroll Effect
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
-        header.classList.toggle('scrolled', window.scrollY > 50);
+        if (header) {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        }
     });
 
     // 3. Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 80;
-                const offsetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerOffset = 80;
+                    const offsetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
             }
         });
     });
@@ -57,72 +64,43 @@ document.addEventListener('DOMContentLoaded', () => {
             cards.forEach(card => {
                 if (filter === 'all') {
                     card.style.display = 'flex';
-                    card.style.opacity = '1';
                 } else {
                     const match = card.dataset.category === filter;
                     card.style.display = match ? 'flex' : 'none';
-                    card.style.opacity = match ? '1' : '0';
                 }
             });
+        });
+    });
 
-            // Rebuild dots after filter
+    // 5. Dropdown Mobile Support
+    document.querySelectorAll('.dropbtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
-                setTimeout(buildSliderDots, 100);
+                e.preventDefault();
+                const content = btn.nextElementSibling;
+                if (content) {
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                }
             }
         });
     });
 
-    // 5. Mobile Slider Dots
-    const pricingGrid = document.getElementById('pricingGrid');
-    const sliderDotsContainer = document.getElementById('sliderDots');
+    // 6. Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-    function buildSliderDots() {
-        if (!sliderDotsContainer || window.innerWidth > 768) return;
-
-        const visibleCards = Array.from(cards).filter(c => c.style.display !== 'none');
-        sliderDotsContainer.innerHTML = '';
-
-        visibleCards.forEach((_, i) => {
-            const dot = document.createElement('div');
-            dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-            dot.addEventListener('click', () => {
-                const card = visibleCards[i];
-                card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            });
-            sliderDotsContainer.appendChild(dot);
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
         });
     }
 
-    // Update active dot on scroll
-    if (pricingGrid) {
-        pricingGrid.addEventListener('scroll', () => {
-            if (window.innerWidth > 768) return;
-            const dots = sliderDotsContainer.querySelectorAll('.slider-dot');
-            const visibleCards = Array.from(cards).filter(c => c.style.display !== 'none');
-            const scrollLeft = pricingGrid.scrollLeft;
-            const cardWidth = visibleCards[0]?.offsetWidth + 16 || 296;
-            const activeIndex = Math.round(scrollLeft / cardWidth);
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === activeIndex);
-            });
-        });
-    }
-
-    // Build dots on load
-    if (window.innerWidth <= 768) {
-        buildSliderDots();
-    }
-
-    window.addEventListener('resize', () => {
-        if (window.innerWidth <= 768) {
-            buildSliderDots();
-        } else {
-            sliderDotsContainer.innerHTML = '';
-        }
-    });
-
-    // 6. Card Hover 3D Effect (Desktop only)
+    // 7. Card Hover 3D Effect (Desktop only)
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             if (window.innerWidth <= 768) return;
@@ -140,26 +118,5 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transform = '';
         });
     });
-
-    // 7. Logo glow pulse on hover
-    const logoImgs = document.querySelectorAll('.service-logo-img');
-    logoImgs.forEach(logo => {
-        logo.addEventListener('mouseenter', () => {
-            logo.style.filter = 'drop-shadow(0 0 25px rgba(212, 175, 55, 0.9))';
-        });
-        logo.addEventListener('mouseleave', () => {
-            logo.style.filter = 'drop-shadow(0 0 12px rgba(212, 175, 55, 0.5))';
-        });
-    });
-
-    // 8. Swipe hint animation on mobile
-    if (window.innerWidth <= 768 && pricingGrid) {
-        setTimeout(() => {
-            pricingGrid.scrollTo({ left: 40, behavior: 'smooth' });
-            setTimeout(() => {
-                pricingGrid.scrollTo({ left: 0, behavior: 'smooth' });
-            }, 600);
-        }, 2500);
-    }
 
 });
