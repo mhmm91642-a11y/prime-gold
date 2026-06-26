@@ -1,0 +1,67 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "9KPRO TV",
+  "url": "https://9kpro-tv.vercel.app",
+  "logo": "https://i.imgur.com/ZWrKn39.png",
+  "description": "اشتراكات IPTV مميزة بجودة 4K وثبات فائق مع 6 سيرفرات فاخرة",
+  "sameAs": [
+    "https://wa.me/966592360612"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+966-592-360-612",
+    "contactType": "Customer Service",
+    "availableLanguage": ["ar", "en"]
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Everest IPTV - 3 أشهر",
+      "description": "اشتراك Everest لمدة 3 أشهر",
+      "price": "120",
+      "priceCurrency": "SAR",
+      "url": "https://9kpro-tv.vercel.app/subscription/everest"
+    },
+    {
+      "@type": "Offer",
+      "name": "Hulk IPTV - 3 أشهر",
+      "description": "اشتراك Hulk لمدة 3 أشهر",
+      "price": "100",
+      "priceCurrency": "SAR",
+      "url": "https://9kpro-tv.vercel.app/subscription/hulk"
+    },
+    {
+      "@type": "Offer",
+      "name": "Strong 4K IPTV - 3 أشهر",
+      "description": "اشتراك Strong 4K لمدة 3 أشهر",
+      "price": "140",
+      "priceCurrency": "SAR",
+      "url": "https://9kpro-tv.vercel.app/subscription/strong"
+    },
+    {
+      "@type": "Offer",
+      "name": "Falcon IPTV - 3 أشهر",
+      "description": "اشتراك Falcon لمدة 3 أشهر",
+      "price": "130",
+      "priceCurrency": "SAR",
+      "url": "https://9kpro-tv.vercel.app/subscription/falcon"
+    },
+    {
+      "@type": "Offer",
+      "name": "Vulture IPTV - 3 أشهر",
+      "description": "اشتراك Vulture لمدة 3 أشهر",
+      "price": "110",
+      "priceCurrency": "SAR",
+      "url": "https://9kpro-tv.vercel.app/subscription/vulture"
+    },
+    {
+      "@type": "Offer",
+      "name": "IPTV Smarters - 6 أشهر",
+      "description": "اشتراك Smarters لمدة 6 أشهر",
+      "price": "99",
+      "priceCurrency": "SAR",
+      "url": "https://9kpro-tv.vercel.app/subscription/smarters"
+    }
+  ]
+}

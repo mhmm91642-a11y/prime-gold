@@ -1,6 +1,6 @@
 /* 
-    Prime Gold - Premium IPTV
-    Luxury Gold & Black Theme - Updated with 7 Services
+    9KPRO TV - Premium IPTV
+    Luxury Gold & Black Theme - Enhanced with Drawer & Animations
 */
 
 :root {
@@ -283,6 +283,7 @@ nav {
     font-weight: 800;
     letter-spacing: 2px;
     margin-bottom: 24px;
+    animation: fadeInDown 0.8s ease-out;
 }
 
 .main-title {
@@ -290,6 +291,7 @@ nav {
     line-height: 1.1;
     font-weight: 900;
     margin-bottom: 24px;
+    animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
 .gold-text {
@@ -301,12 +303,24 @@ nav {
     font-size: 1.2rem;
     color: var(--text-gray);
     margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .hero-actions {
     display: flex;
     justify-content: center;
     gap: 16px;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- Features Mini --- */
@@ -328,6 +342,7 @@ nav {
     gap: 12px;
     font-weight: 700;
     color: var(--text-gray);
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .f-item i { color: var(--gold); font-size: 1.2rem; }
@@ -377,6 +392,7 @@ nav {
     font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 12px;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .gold-glow {
@@ -430,6 +446,8 @@ nav {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .price-card-premium::before {
@@ -498,7 +516,6 @@ nav {
     border: 1px solid var(--glass-border);
     border-radius: 15px;
     transition: 0.3s;
-    text-align: center;
 }
 
 .option-item:hover {
@@ -558,6 +575,205 @@ nav {
 .popular-tag-4k {
     background: #ff4d4d;
     color: #fff;
+}
+
+/* --- Product Detail Drawer --- */
+.drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1500;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.drawer-overlay.active {
+    display: block;
+}
+
+.drawer-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 500px;
+    background: var(--bg-card);
+    border-left: 1px solid var(--gold-border);
+    z-index: 1600;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: slideInRight 0.4s ease-out;
+}
+
+.drawer-container.active {
+    transform: translateX(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.drawer-header {
+    padding: 30px 24px;
+    border-bottom: 1px solid var(--gold-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drawer-close {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.drawer-close:hover {
+    transform: rotate(90deg);
+}
+
+.drawer-content {
+    padding: 30px 24px;
+}
+
+.drawer-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
+}
+
+.drawer-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--gold);
+}
+
+.drawer-description {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: right;
+    direction: rtl;
+}
+
+.drawer-features {
+    margin-bottom: 30px;
+}
+
+.drawer-features h4 {
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.drawer-features ul {
+    list-style: none;
+    padding-right: 0;
+}
+
+.drawer-features li {
+    padding: 8px 0;
+    color: var(--text-gray);
+    position: relative;
+    padding-right: 20px;
+}
+
+.drawer-features li::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.drawer-pricing {
+    margin-bottom: 30px;
+}
+
+.drawer-pricing h4 {
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.price-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid var(--gold-border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.price-option-duration {
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.price-option-amount {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--gold);
+}
+
+.drawer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.drawer-actions .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* --- Floating WhatsApp Button --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 70px;
+    height: 70px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    transition: var(--transition);
+    text-decoration: none;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float i {
+    pointer-events: none;
 }
 
 /* --- Footer --- */
@@ -722,5 +938,26 @@ footer {
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .drawer-container {
+        max-width: 100%;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        left: 20px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
     }
 }

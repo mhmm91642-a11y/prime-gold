@@ -1,0 +1,20 @@
+# 9KPRO TV - Robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Allow: /subscription/
+Allow: /index.html
+Allow: /style.css
+Allow: /script.js
+Allow: /logos/
+
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://9kpro-tv.vercel.app/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
