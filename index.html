@@ -21,23 +21,22 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* New Luxury Packages Styles */
-        .packages-container { background-color: #0d0d0d; padding: 40px 15px; font-family: 'Cairo', sans-serif; direction: rtl; }
-        .packages-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 1200px; margin: 0 auto; }
-        .package-card { background-color: #1a1a1a; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); border: 1px solid #222; transition: transform 0.3s ease; }
+        .packages-container { background-color: #0d0d0d; padding: 40px 15px; direction: rtl; font-family: 'Cairo', sans-serif; }
+        .packages-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 1200px; margin: 0 auto; }
+        .package-card { background-color: #1a1a1a; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); border: 1px solid #222; letter-spacing: normal; transform: translate3d(0,0,0); transition: transform 0.3s ease, border-color 0.3s ease; }
         .package-card:hover { transform: translateY(-5px); border-color: #dfb664; }
-        .image-container { position: relative; width: 100%; padding-top: 100%; background-color: #111; }
-        .image-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-        .discount-badge { position: absolute; top: 8px; right: 8px; background-color: rgba(45, 45, 45, 0.85); color: #fff; padding: 4px 8px; font-size: 11px; border-radius: 4px; z-index: 2; font-weight: 500; }
+        .image-container { position: relative; width: 100%; padding-top: 100%; background-color: #111; display: block; }
+        .image-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; padding: 10px; }
+        .discount-badge { position: absolute; top: 8px; right: 8px; background-color: rgba(45, 45, 45, 0.9); color: #fff; padding: 4px 8px; font-size: 11px; border-radius: 4px; z-index: 2; font-weight: bold; }
         .card-body { padding: 12px; text-align: center; flex-grow: 1; }
-        .package-title { font-size: 14px; font-weight: 600; margin: 0 0 8px 0; color: #e0e0e0; line-height: 1.4; }
-        .price-container { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .current-price { color: #ff4a5a; font-weight: bold; font-size: 15px; }
-        .old-price { color: #777; text-decoration: line-through; font-size: 12px; }
+        .package-title { font-size: 13px; font-weight: 600; margin: 0 0 8px 0; color: #fff; line-height: 1.5; min-height: 45px; display: flex; align-items: center; justify-content: center; transform: none; scale: 1; }
+        .price-container { display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 5px; }
+        .current-price { color: #ff4a5a; font-weight: bold; font-size: 15px; display: inline-block; }
+        .old-price { color: #777; text-decoration: line-through; font-size: 12px; display: inline-block; }
         .card-actions { display: flex; border-top: 1px solid #2d2d2d; }
-        .order-now-link { flex: 3; background-color: #dfb664; color: #111; text-decoration: none; padding: 12px 8px; font-weight: bold; font-size: 13px; text-align: center; cursor: pointer; border: none; }
-        .view-btn { flex: 1; background-color: #dfb664; color: #111; border: none; border-right: 1px solid rgba(0, 0, 0, 0.1); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-        @media (min-width: 768px) { .packages-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; } }
+        .order-now-link { flex: 3; background-color: #dfb664; color: #111; text-decoration: none; padding: 12px 5px; font-weight: bold; font-size: 13px; text-align: center; display: block; }
+        .view-btn { flex: 1; background-color: #dfb664; color: #111; border: none; border-right: 1px solid rgba(0, 0, 0, 0.1); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        @media (min-width: 768px) { .packages-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; } .package-title { font-size: 15px; } }
     </style>
 </head>
 <body>
@@ -117,55 +116,94 @@
             </div>
 
             <div class="packages-grid">
-                <!-- Everest -->
+                
+                <!-- Everest - Year - 2 Devices -->
                 <div class="package-card" data-aos="fade-up">
+                    <div class="image-container">
+                        <span class="discount-badge">عرض خاص</span>
+                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/everest-logo.png" alt="Everest">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="package-title">اشتراك Everest - سنة (جهازين)</h3>
+                        <div class="price-container">
+                            <span class="current-price">180 ر.س</span>
+                            <span class="old-price">280 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Everest سنة جهازين" class="order-now-link">اطلب الآن</a>
+                        <button class="view-btn">👁️</button>
+                    </div>
+                </div>
+
+                <!-- Everest - Year - 1 Device -->
+                <div class="package-card" data-aos="fade-up" data-aos-delay="50">
                     <div class="image-container">
                         <span class="discount-badge">الأكثر طلباً</span>
                         <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/everest-logo.png" alt="Everest">
                     </div>
                     <div class="card-body">
-                        <h3 class="package-title">اشتراك Everest سنة</h3>
+                        <h3 class="package-title">اشتراك Everest - سنة (جهاز واحد)</h3>
                         <div class="price-container">
-                            <span class="current-price">280.00 ر.س</span>
-                            <span class="old-price">450.00 ر.س</span>
+                            <span class="current-price">140 ر.س</span>
+                            <span class="old-price">220 ر.س</span>
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Everest سنة" class="order-now-link">اطلب الآن</a>
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Everest سنة جهاز واحد" class="order-now-link">اطلب الآن</a>
                         <button class="view-btn">👁️</button>
                     </div>
                 </div>
 
-                <!-- Hulk -->
+                <!-- Hulk - Year - 2 Devices -->
                 <div class="package-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="image-container">
-                        <span class="discount-badge">وفر 30%</span>
+                        <span class="discount-badge">عرض</span>
                         <img src="https://i.imgur.com/v8p7O6Z.png" alt="Hulk">
                     </div>
                     <div class="card-body">
-                        <h3 class="package-title">اشتراك Hulk سنة</h3>
+                        <h3 class="package-title">اشتراك Hulk - سنة (جهازين)</h3>
                         <div class="price-container">
-                            <span class="current-price">250.00 ر.س</span>
-                            <span class="old-price">350.00 ر.س</span>
+                            <span class="current-price">230 ر.س</span>
+                            <span class="old-price">320 ر.س</span>
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Hulk سنة" class="order-now-link">اطلب الآن</a>
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Hulk سنة جهازين" class="order-now-link">اطلب الآن</a>
                         <button class="view-btn">👁️</button>
                     </div>
                 </div>
 
-                <!-- Strong 4K -->
+                <!-- Falcon - Year - 1 Device -->
+                <div class="package-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="image-container">
+                        <span class="discount-badge">عرض</span>
+                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/44d0a66f-ce07-4a1c-b5a9-65ccd196676c.png" alt="Falcon">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="package-title">اشتراك Falcon - سنة (جهاز واحد)</h3>
+                        <div class="price-container">
+                            <span class="current-price">180 ر.س</span>
+                            <span class="old-price">280 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Falcon سنة جهاز واحد" class="order-now-link">اطلب الآن</a>
+                        <button class="view-btn">👁️</button>
+                    </div>
+                </div>
+
+                <!-- Strong 4K - Year -->
                 <div class="package-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="image-container">
                         <span class="discount-badge">4K ملكي</span>
                         <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/strong-logo.png" alt="Strong 4K">
                     </div>
                     <div class="card-body">
-                        <h3 class="package-title">اشتراك Strong 4K سنة</h3>
+                        <h3 class="package-title">اشتراك Strong 4K - سنة</h3>
                         <div class="price-container">
-                            <span class="current-price">320.00 ر.س</span>
-                            <span class="old-price">480.00 ر.س</span>
+                            <span class="current-price">320 ر.س</span>
+                            <span class="old-price">450 ر.س</span>
                         </div>
                     </div>
                     <div class="card-actions">
@@ -174,24 +212,117 @@
                     </div>
                 </div>
 
-                <!-- Falcon -->
-                <div class="package-card" data-aos="fade-up" data-aos-delay="300">
+                <!-- Vulture - Year -->
+                <div class="package-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="image-container">
-                        <span class="discount-badge">وفر 44%</span>
-                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/44d0a66f-ce07-4a1c-b5a9-65ccd196676c.png" alt="Falcon">
+                        <span class="discount-badge">عرض</span>
+                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/9af8dd15-5cc0-42bb-9684-2477416105ed.png" alt="Vulture">
                     </div>
                     <div class="card-body">
-                        <h3 class="package-title">اشتراك Falcon سنة</h3>
+                        <h3 class="package-title">اشتراك Vulture - سنة</h3>
                         <div class="price-container">
-                            <span class="current-price">300.00 ر.س</span>
-                            <span class="old-price">540.00 ر.س</span>
+                            <span class="current-price">260 ر.س</span>
+                            <span class="old-price">380 ر.س</span>
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Falcon سنة" class="order-now-link">اطلب الآن</a>
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Vulture سنة" class="order-now-link">اطلب الآن</a>
                         <button class="view-btn">👁️</button>
                     </div>
                 </div>
+
+                <!-- Smarters - Year -->
+                <div class="package-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="image-container">
+                        <span class="discount-badge">اقتصادي</span>
+                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/d94288e8-52f1-4eb5-b24f-5dfd8fee6d4d.png" alt="Smarters">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="package-title">اشتراك IPTV Smarters - سنة</h3>
+                        <div class="price-container">
+                            <span class="current-price">150 ر.س</span>
+                            <span class="old-price">220 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك IPTV Smarters سنة" class="order-now-link">اطلب الآن</a>
+                        <button class="view-btn">👁️</button>
+                    </div>
+                </div>
+
+                <!-- 6 Months Packages -->
+                <!-- Everest - 6 Months -->
+                <div class="package-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="image-container">
+                        <span class="discount-badge">6 أشهر</span>
+                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/everest-logo.png" alt="Everest">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="package-title">اشتراك Everest - 6 أشهر</h3>
+                        <div class="price-container">
+                            <span class="current-price">180 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Everest 6 أشهر" class="order-now-link">اطلب الآن</a>
+                        <button class="view-btn">👁️</button>
+                    </div>
+                </div>
+
+                <!-- Hulk - 6 Months -->
+                <div class="package-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="image-container">
+                        <span class="discount-badge">6 أشهر</span>
+                        <img src="https://i.imgur.com/v8p7O6Z.png" alt="Hulk">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="package-title">اشتراك Hulk - 6 أشهر</h3>
+                        <div class="price-container">
+                            <span class="current-price">150 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Hulk 6 أشهر" class="order-now-link">اطلب الآن</a>
+                        <button class="view-btn">👁️</button>
+                    </div>
+                </div>
+
+                <!-- Strong 4K - 6 Months -->
+                <div class="package-card" data-aos="fade-up" data-aos-delay="450">
+                    <div class="image-container">
+                        <span class="discount-badge">6 أشهر</span>
+                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/strong-logo.png" alt="Strong 4K">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="package-title">اشتراك Strong 4K - 6 أشهر</h3>
+                        <div class="price-container">
+                            <span class="current-price">210 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Strong 4K 6 أشهر" class="order-now-link">اطلب الآن</a>
+                        <button class="view-btn">👁️</button>
+                    </div>
+                </div>
+
+                <!-- Falcon - 6 Months -->
+                <div class="package-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="image-container">
+                        <span class="discount-badge">6 أشهر</span>
+                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/44d0a66f-ce07-4a1c-b5a9-65ccd196676c.png" alt="Falcon">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="package-title">اشتراك Falcon - 6 أشهر</h3>
+                        <div class="price-container">
+                            <span class="current-price">200 ر.س</span>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://wa.me/966592360612?text=مرحباً، أريد طلب اشتراك Falcon 6 أشهر" class="order-now-link">اطلب الآن</a>
+                        <button class="view-btn">👁️</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
