@@ -3,263 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9KPRO TV | اشتراكات IPTV مميزة بجودة 4K وثبات فائق</title>
-    
-    <!-- SEO & Meta -->
-    <meta name="description" content="9KPRO TV - اشتراكات IPTV مميزة بجودة 4K وثبات فائق. 6 سيرفرات فاخرة (Everest, Hulk, Strong 4K, Falcon, Vulture, Smarters) مع أفضل الأسعار والدعم الفني المتواصل.">
-    <meta name="keywords" content="اشتراكات IPTV, سيرفرات IPTV, IPTV مباريات, IPTV 4K, Everest IPTV, Hulk IPTV, Strong 4K, Falcon IPTV, Vulture IPTV, Smarters IPTV">
-    <meta name="author" content="9KPRO TV">
-    <meta property="og:title" content="9KPRO TV | اشتراكات IPTV فاخرة بجودة 4K">
-    <meta property="og:description" content="أفضل اشتراكات IPTV مع 6 سيرفرات مميزة وجودة 4K وثبات 99.9%">
-    <meta property="og:type" content="website">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
+    <title>9KPRO TV | اشتراكات IPTV فاخرة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        .packages-container { background-color: #0d0d0d; padding: 40px 15px; direction: rtl; font-family: 'Cairo', sans-serif; }
+        /* إعادة ضبط العناصر الأساسية */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; letter-spacing: normal; text-transform: none; }
+        body { background-color: #0d0d0d; color: #fff; line-height: 1.6; text-align: right; }
+        a { text-decoration: none; }
+
+        /* الهيدر / شريط التنقّل */
+        header { background-color: rgba(26, 26, 26, 0.95); padding: 15px 20px; border-bottom: 1px solid #222; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { color: #dfb664; font-size: 20px; font-weight: 900; }
+        .nav-btn { background: none; border: none; color: #dfb664; font-size: 24px; cursor: pointer; }
+
+        /* البنر الرئيسي (Hero Section) */
+        .hero { background: linear-gradient(rgba(13, 13, 13, 0.85), #0d0d0d), url('https://i.imgur.com/8Q9uQ8X.jpg') no-repeat center center/cover; padding: 60px 20px; text-align: center; border-bottom: 1px solid #1a1a1a; }
+        .hero-badge { display: inline-block; border: 1px solid #dfb664; color: #dfb664; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; margin-bottom: 15px; }
+        .hero h1 { font-size: 28px; font-weight: 900; margin-bottom: 10px; line-height: 1.3; }
+        .hero h1 span { color: #dfb664; }
+        .hero p { color: #b3b3b3; font-size: 14px; margin-bottom: 25px; }
+        .hero-buttons { display: flex; flex-direction: column; gap: 12px; max-width: 300px; margin: 0 auto; }
+        .btn-main { background-color: #dfb664; color: #111; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 14px; }
+        .btn-sub { background-color: rgba(255,255,255,0.05); color: #fff; border: 1px solid #333; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 14px; }
+
+        /* قسم المميزات */
+        .features { padding: 30px 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 800px; margin: 0 auto; }
+        .feat-item { display: flex; align-items: center; gap: 10px; background: #141414; padding: 12px; border-radius: 8px; border: 1px solid #1f1f1f; }
+        .feat-icon { color: #dfb664; font-size: 18px; }
+        .feat-text h4 { font-size: 12px; color: #fff; font-weight: bold; }
+        .feat-text p { font-size: 11px; color: #888; }
+
+        /* قسم عنوان الباقات */
+        .section-title { text-align: center; padding: 40px 20px 10px; }
+        .section-title h2 { font-size: 24px; font-weight: 900; color: #fff; }
+        .section-title p { color: #888; font-size: 12px; margin-top: 5px; }
+
+        /* شبكة الباقات المتجاوبة (عمودين جوال / 4 كمبيوتر) */
+        .packages-container { padding: 15px; }
         .packages-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 1200px; margin: 0 auto; }
-        .package-card { background-color: #1a1a1a; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); border: 1px solid #222; letter-spacing: normal; transition: transform 0.3s ease; }
+        .package-card { background-color: #1a1a1a; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); border: 1px solid #222; transition: transform 0.3s ease; }
         .package-card:hover { transform: translateY(-5px); border-color: #dfb664; }
-        .image-container { position: relative; width: 100%; padding-top: 100%; background-color: #111; display: block; }
-        .image-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; padding: 8px; }
-        .discount-badge { position: absolute; top: 8px; right: 8px; background-color: rgba(45, 45, 45, 0.9); color: #fff; padding: 4px 8px; font-size: 11px; border-radius: 4px; z-index: 2; font-weight: bold; white-space: nowrap; }
+        .image-container { position: relative; width: 100%; padding-top: 100%; background-color: #111; }
+        .image-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+        .discount-badge { position: absolute; top: 8px; right: 8px; background-color: rgba(45, 45, 45, 0.95); color: #fff; padding: 4px 8px; font-size: 11px; border-radius: 4px; z-index: 2; font-weight: bold; white-space: nowrap; }
         .card-body { padding: 12px; text-align: center; flex-grow: 1; }
-        .package-title { font-size: 13px; font-weight: 600; margin: 0 0 8px 0; color: #fff; line-height: 1.5; min-height: 40px; display: flex; align-items: center; justify-content: center; }
+        .package-title { font-size: 13px; font-weight: bold; margin: 0 0 8px 0; color: #fff; line-height: 1.4; min-height: 38px; display: flex; align-items: center; justify-content: center; }
         .price-container { display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 5px; }
         .current-price { color: #ff4a5a; font-weight: bold; font-size: 14px; }
-        .old-price { color: #777; text-decoration: line-through; font-size: 11px; }
         .card-actions { display: flex; border-top: 1px solid #2d2d2d; }
         .order-now-link { flex: 3; background-color: #dfb664; color: #111; text-decoration: none; padding: 12px 5px; font-weight: bold; font-size: 13px; text-align: center; display: block; }
         .view-btn { flex: 1; background-color: #dfb664; color: #111; border: none; border-right: 1px solid rgba(0, 0, 0, 0.1); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; }
-        @media (min-width: 768px) { .packages-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; } .package-title { font-size: 15px; } }
+
+        /* الفوتر الأخير */
+        footer { background-color: #080808; padding: 30px 20px; text-align: center; border-top: 1px solid #111; margin-top: 40px; }
+        .footer-logo { font-size: 18px; font-weight: bold; color: #dfb664; margin-bottom: 8px; }
+        footer p { font-size: 12px; color: #666; }
+
+        /* الشاشات الكبيرة (الكمبيوتر) */
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 42px; }
+            .hero p { font-size: 16px; }
+            .hero-buttons { flex-direction: row; max-width: 450px; }
+            .hero-buttons a { flex: 1; }
+            .features { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+            .packages-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+            .package-title { font-size: 15px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Loader -->
-    <div class="loader-wrapper">
-        <div class="loader-content">
-            <img src="https://i.imgur.com/ZWrKn39.png" alt="9KPRO TV" class="loader-logo">
-            <div class="shimmer"></div>
-        </div>
-    </div>
-
-    <!-- Header -->
+    <!-- الهيدر -->
     <header>
-        <nav class="container">
-            <div class="logo">
-                <img src="https://i.imgur.com/ZWrKn39.png" alt="9kpro TV">
-                <span>9KPRO TV</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="/">الرئيسية</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">مميزات الاشتراكات <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/subscription/everest">مميزات Everest</a>
-                        <a href="/subscription/hulk">مميزات Hulk</a>
-                        <a href="/subscription/strong">مميزات Strong 4K</a>
-                        <a href="/subscription/falcon">مميزات Falcon</a>
-                        <a href="/subscription/vulture">مميزات Vulture</a>
-                        <a href="/subscription/smarters">مميزات Smarters</a>
-                    </div>
-                </li>
-                <li><a href="#packages">الباقات</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-        </nav>
+        <div class="logo">9KPRO TV ✨</div>
+        <button class="nav-btn">☰</button>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-video-bg">
-            <div class="gradient-layer"></div>
-        </div>
-        <div class="container hero-container">
-            <div class="hero-content" data-aos="zoom-out">
-                <div class="badge-premium">PREMIUM IPTV EXPERIENCE</div>
-                <h1 class="main-title">اشتراكات <span class="gold-text">IPTV</span> فاخرة</h1>
-                <p class="hero-desc">جودة عالية • ثبات ممتاز • دعم فني متواصل</p>
-                <div class="hero-actions">
-                    <a href="#packages" class="btn btn-gold-main">استعرض الباقات <i class="fas fa-chevron-left"></i></a>
-                    <a href="https://wa.me/966592360612" class="btn btn-glass">تواصل واتساب <i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
+    <!-- البنر الرئيسي -->
+    <section class="hero">
+        <span class="hero-badge">PREMIUM IPTV EXPERIENCE</span>
+        <h1>اشتراكات <span>IPTV فاخرة</span></h1>
+        <p>جودة عالية • ثبات ممتاز • دعم فني متواصل على مدار الساعة</p>
+        <div class="hero-buttons">
+            <a href="#packages" class="btn-main">استعرض الباقات ❯</a>
+            <a href="https://wa.me/966592360612" class="btn-sub">تواصل واتساب 💬</a>
         </div>
     </section>
 
-    <!-- Features Mini -->
-    <section class="features-mini">
-        <div class="container">
-            <div class="features-row">
-                <div class="f-item"><i class="fas fa-bolt"></i> تفعيل فوري</div>
-                <div class="f-item"><i class="fas fa-shield-alt"></i> استقرار 99.9%</div>
-                <div class="f-item"><i class="fas fa-tv"></i> جودة 4K UHD</div>
-                <div class="f-item"><i class="fas fa-server"></i> 6 سيرفرات مميزة</div>
+    <!-- المميزات السريعة -->
+    <section class="features">
+        <div class="feat-item"><span class="feat-icon">⚡</span><div class="feat-text"><h4>تفعيل فوري</h4><p>بعد الدفع مباشرة</p></div></div>
+        <div class="feat-item"><span class="feat-icon">🛡️</span><div class="feat-text"><h4>استقرار 99.9%</h4><p>بدون أي تقطيع</p></div></div>
+        <div class="feat-item"><span class="feat-icon">📺</span><div class="feat-text"><h4>جودة 4K UHD</h4><p>أعلى دقة بث</p></div></div>
+        <div class="feat-item"><span class="feat-icon">🗄️</span><div class="feat-text"><h4>6 سيرفرات</h4><p>باقات منوعة ومميزة</p></div></div>
+    </section>
+
+    <!-- عنوان الباقات -->
+    <div class="section-title" id="packages">
+        <h2>اختر باقتك المثالية</h2>
+        <p>جميع الاشتراكات تدعم كافة الأجهزة وتحديثات يومية تلقائية</p>
+    </div>
+
+    <!-- شبكة المنتجات -->
+    <section class="packages-container">
+        <div class="packages-grid">
+            
+            <!-- 1. ايفرست سنة جهازين -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">الأكثر طلباً</span><img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/everest-logo.png" alt="Everest"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك Everest - سنة (جهازين)</h3>
+                    <div class="price-container"><span class="current-price">180 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك ايفرست سنة جهازين" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
             </div>
+
+            <!-- 2. ايفرست سنة جهاز واحد -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">عرض خاص</span><img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/everest-logo.png" alt="Everest"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك Everest - سنة (جهاز واحد)</h3>
+                    <div class="price-container"><span class="current-price">140 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك ايفرست سنة جهاز واحد" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
+            </div>
+
+            <!-- 3. هولك سنة جهازين -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">باقة H كاملة</span><img src="https://i.imgur.com/v8p7O6Z.png" alt="Hulk"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك Hulk - سنة (جهازين)</h3>
+                    <div class="price-container"><span class="current-price">230 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك هولك سنة جهازين" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
+            </div>
+
+            <!-- 4. فالكون سنة جهاز واحد -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">توفير مميز</span><img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/44d0a66f-ce07-4a1c-b5a9-65ccd196676c.png" alt="Falcon"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك Falcon - سنة (جهاز واحد)</h3>
+                    <div class="price-container"><span class="current-price">180 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك فالكون سنة جهاز واحد" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
+            </div>
+
+            <!-- 5. سترونج سنة -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">باقة Strong 4K</span><img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/strong-logo.png" alt="Strong"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك Strong 4K - سنة</h3>
+                    <div class="price-container"><span class="current-price">320 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك سترونج سنة" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
+            </div>
+
+            <!-- 6. سبايدر سنة -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">ثبات عالي</span><img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/9af8dd15-5cc0-42bb-9684-2477416105ed.png" alt="Spider"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك Spider - سنة</h3>
+                    <div class="price-container"><span class="current-price">260 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك سبايدر سنة" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
+            </div>
+
+            <!-- 7. سمارترز سنة -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">التطبيق الرسمي</span><img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/d94288e8-52f1-4eb5-b24f-5dfd8fee6d4d.png" alt="Smarters"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك IPTV Smarters - سنة</h3>
+                    <div class="price-container"><span class="current-price">150 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك سمارترز سنة" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
+            </div>
+
+            <!-- 8. ايفرست 6 شهور -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">6 شهور</span><img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/everest-logo.png" alt="Everest"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك Everest - 6 شهور</h3>
+                    <div class="price-container"><span class="current-price">100 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك ايفرست 6 شهور" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
+            </div>
+
+            <!-- 9. هولك 6 شهور -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">6 شهور</span><img src="https://i.imgur.com/v8p7O6Z.png" alt="Hulk"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك Hulk - 6 شهور</h3>
+                    <div class="price-container"><span class="current-price">150 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك هولك 6 شهور" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
+            </div>
+
+            <!-- 10. سترونج 6 شهور -->
+            <div class="package-card">
+                <div class="image-container"><span class="discount-badge">6 شهور</span><img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/strong-logo.png" alt="Strong"></div>
+                <div class="card-body">
+                    <h3 class="package-title">اشتراك Strong 4K - 6 شهور</h3>
+                    <div class="price-container"><span class="current-price">210 ر.س</span></div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/966592360612?text=طلب اشتراك سترونج 6 شهور" class="order-now-link">اطلب الآن</a>
+                    <button class="view-btn">👁️</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="packages" class="packages-container">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 40px;" data-aos="fade-up">
-                <h2 class="section-title" style="color: #fff; font-size: 2.5rem; margin-bottom: 10px;">اختر باقتك <span style="color: #dfb664;">المثالية</span></h2>
-                <p style="color: #888;">جميع الاشتراكات تدعم كافة الأجهزة وتحديثات يومية</p>
-            </div>
-
-            <div class="packages-grid">
-                
-                <!-- باقة ايفرست سنة جهازين -->
-                <div class="package-card" data-aos="fade-up">
-                    <div class="image-container">
-                        <span class="discount-badge">الأكثر طلباً</span>
-                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/everest-logo.png" alt="Everest">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="package-title">اشتراك Everest - سنة (جهازين)</h3>
-                        <div class="price-container">
-                            <span class="current-price">180 ر.س</span>
-                        </div>
-                    </div>
-                    <div class="card-actions">
-                        <a href="https://wa.me/966592360612?text=طلب اشتراك ايفرست سنة جهازين" class="order-now-link">اطلب الآن</a>
-                        <button class="view-btn">👁️</button>
-                    </div>
-                </div>
-
-                <!-- باقة ايفرست سنة جهاز -->
-                <div class="package-card" data-aos="fade-up" data-aos-delay="50">
-                    <div class="image-container">
-                        <span class="discount-badge">عرض خاص</span>
-                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/everest-logo.png" alt="Everest">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="package-title">اشتراك Everest - سنة (جهاز واحد)</h3>
-                        <div class="price-container">
-                            <span class="current-price">140 ر.س</span>
-                        </div>
-                    </div>
-                    <div class="card-actions">
-                        <a href="https://wa.me/966592360612?text=طلب اشتراك ايفرست سنة جهاز واحد" class="order-now-link">اطلب الآن</a>
-                        <button class="view-btn">👁️</button>
-                    </div>
-                </div>
-
-                <!-- باقة هولك سنة جهازين -->
-                <div class="package-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="image-container">
-                        <span class="discount-badge">باقة H</span>
-                        <img src="https://i.imgur.com/v8p7O6Z.png" alt="Hulk">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="package-title">اشتراك Hulk - سنة (جهازين)</h3>
-                        <div class="price-container">
-                            <span class="current-price">230 ر.س</span>
-                        </div>
-                    </div>
-                    <div class="card-actions">
-                        <a href="https://wa.me/966592360612?text=طلب اشتراك هولك سنة جهازين" class="order-now-link">اطلب الآن</a>
-                        <button class="view-btn">👁️</button>
-                    </div>
-                </div>
-
-                <!-- باقة فالكون سنة جهاز واحد -->
-                <div class="package-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="image-container">
-                        <span class="discount-badge">توفير</span>
-                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/44d0a66f-ce07-4a1c-b5a9-65ccd196676c.png" alt="Falcon">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="package-title">اشتراك Falcon - سنة (جهاز واحد)</h3>
-                        <div class="price-container">
-                            <span class="current-price">180 ر.س</span>
-                        </div>
-                    </div>
-                    <div class="card-actions">
-                        <a href="https://wa.me/966592360612?text=طلب اشتراك فالكون سنة جهاز واحد" class="order-now-link">اطلب الآن</a>
-                        <button class="view-btn">👁️</button>
-                    </div>
-                </div>
-
-                <!-- باقة سبايدر -->
-                <div class="package-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="image-container">
-                        <span class="discount-badge">مميز</span>
-                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/9af8dd15-5cc0-42bb-9684-2477416105ed.png" alt="Spider">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="package-title">اشتراك Spider - سنة</h3>
-                        <div class="price-container">
-                            <span class="current-price">99 ر.س</span>
-                        </div>
-                    </div>
-                    <div class="card-actions">
-                        <a href="https://wa.me/966592360612?text=طلب اشتراك سبايدر سنة" class="order-now-link">اطلب الآن</a>
-                        <button class="view-btn">👁️</button>
-                    </div>
-                </div>
-
-                <!-- باقة IPTV Smarters -->
-                <div class="package-card" data-aos="fade-up" data-aos-delay="250">
-                    <div class="image-container">
-                        <span class="discount-badge">التطبيق المعتمد</span>
-                        <img src="https://media.zid.store/cdn-cgi/image/w=auto,q=100,f=auto/https://media.zid.store/05d0953b-b7e2-47c6-af1b-eb46a948c8df/d94288e8-52f1-4eb5-b24f-5dfd8fee6d4d.png" alt="Smarters">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="package-title">اشتراك IPTV Smarters - سنة</h3>
-                        <div class="price-container">
-                            <span class="current-price">150 ر.س</span>
-                        </div>
-                    </div>
-                    <div class="card-actions">
-                        <a href="https://wa.me/966592360612?text=طلب اشتراك سمارترز سنة" class="order-now-link">اطلب الآن</a>
-                        <button class="view-btn">👁️</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer & Scripts -->
-    <footer id="contact" style="background: #111; padding: 50px 0; color: #fff; text-align: center;">
-        <div class="container">
-            <img src="https://i.imgur.com/ZWrKn39.png" alt="9KPRO TV" style="width: 80px; margin-bottom: 20px;">
-            <h3>9KPRO TV</h3>
-            <p>أفضل تجربة IPTV في الوطن العربي</p>
-            <div class="social-links" style="margin: 20px 0;">
-                <a href="https://wa.me/966592360612" style="color: #dfb664; font-size: 24px; margin: 0 15px;"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <p style="font-size: 14px; color: #666;">© 2026 جميع الحقوق محفوظة لـ 9KPRO TV</p>
-        </div>
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-logo">9KPRO TV</div>
+        <p>أفضل تجربة IPTV في الوطن العربي بجودة 4K</p>
+        <p style="margin-top: 10px;">© 2026 جميع الحقوق محفوظة</p>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 800, once: true });
-        
-        // Hide loader
-        window.addEventListener('load', () => {
-            document.querySelector('.loader-wrapper').style.opacity = '0';
-            setTimeout(() => {
-                document.querySelector('.loader-wrapper').style.display = 'none';
-            }, 500);
-        });
-
-        // Mobile Menu
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
